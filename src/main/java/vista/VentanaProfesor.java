@@ -194,6 +194,8 @@ public class VentanaProfesor extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       
+        try{
         if(JOptionPane.showConfirmDialog(this, "Quieres Guardar Los datos", "Selecione una opcion", JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE)==0){ 
         var data = new String[8];
         data[0] = this.jTextField1.getText();
@@ -209,6 +211,9 @@ public class VentanaProfesor extends javax.swing.JInternalFrame {
         this.limpiar();
      
     JOptionPane.showMessageDialog(this, "Se registro con exito","Datos",JOptionPane.INFORMATION_MESSAGE);
+        }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage(),"Error en la creacion",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

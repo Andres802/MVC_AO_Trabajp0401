@@ -123,10 +123,10 @@ public class VentanaModificarProfesor extends javax.swing.JInternalFrame {
     private ProfesorControlador profeControl = new ProfesorControlador(); 
     
     public void actualizarTabla() {
-
+        
         var data = new Object[this.profeControl.listar().size()][6];
         for (var i = 0; i < this.profeControl.listar().size(); i++) {
-
+            
             data[i][0] = this.profeControl.listar().get(i).getCodigo();
             data[i][1] = this.profeControl.listar().get(i).getNombre();
             data[i][2] = this.profeControl.listar().get(i).getFechaNacimiento();
@@ -136,6 +136,7 @@ public class VentanaModificarProfesor extends javax.swing.JInternalFrame {
          
 
         }
+        
 
         var encabezado = new String[6];
         encabezado[0] = "Código";
@@ -148,7 +149,7 @@ public class VentanaModificarProfesor extends javax.swing.JInternalFrame {
         
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(data, encabezado));
-
+        
     }
     /**
      * @param args the command line arguments

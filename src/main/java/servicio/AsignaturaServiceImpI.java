@@ -77,4 +77,36 @@ public class AsignaturaServiceImpI implements AsignaturaService {
         
         this.asignaturaList.set(indice, asignatura);
     }
+
+    @Override
+    public boolean codigoEliminar(int codigo) {
+    var retorno = true;
+        for (var materia : this.asignaturaList) {
+            if (codigo == materia.getCodigo()) {
+               retorno = false;
+            } else {
+               
+                retorno = true;
+                
+            }
+            
+        }
+        return retorno;
+    }
+
+    @Override
+    public boolean codigoExiste(int codigo) {
+    
+         var retorno = false;
+        for (var materia : this.asignaturaList) {
+            if (codigo == materia.getCodigo()) {
+                retorno = true;
+                break;
+            }
+        }
+
+        return retorno;
+
+       
+    }
 }

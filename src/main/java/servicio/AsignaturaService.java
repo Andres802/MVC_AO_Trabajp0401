@@ -19,5 +19,6 @@ public interface AsignaturaService {
     public void modificar(int condigo, Asignatura asignatura);
     public void eliminar(int codigo);
     public abstract List<Asignatura> listar();
-    
+    public boolean codigoEliminar(int codigo);
+     public boolean codigoExiste(int codigo);
 }

@@ -138,12 +138,16 @@ public class VentanaEliminarMateria extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try{
         var data = new String[1];
         data[0] = this.jTextField1.getText();
 
         this.materiacontrol.eliminar(data);
         this.actualizarTabla();
          JOptionPane.showMessageDialog(this, "Se elimino la informacion correctamente");
+         }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage(),"Error el codigo no existe",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

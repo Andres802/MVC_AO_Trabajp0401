@@ -16,4 +16,7 @@ public interface GrupoService {
     public abstract void crear(Grupo grupo);
     public void eliminar(int codigo);
     public abstract List<Grupo> listar();
+    public boolean codigoEliminar(int codigo);
+    public boolean grupoExiste(int codigo);
+    public boolean aulaExiste(int codigo);
 }

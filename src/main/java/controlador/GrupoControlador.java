@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import java.time.LocalDate;
 import java.util.List;
 import modelo.Grupo;
 import servicio.GrupoServiceImpI;
@@ -21,6 +22,8 @@ public class GrupoControlador {
      private ProfesorServiceImpI profesorServi = new ProfesorServiceImpI();
     
     public void crear(String[] data) {
+        
+        try{
         var numeroGrupo = Integer.valueOf(data[0]);
         var aula = Integer.valueOf(data[1]);
         var numeroAlumnos = Integer.valueOf(data[2]);
@@ -30,6 +33,19 @@ public class GrupoControlador {
         
         var grupo = new Grupo(numeroGrupo,aula,numeroAlumnos,nivelCiclo,asignatura,profesor);
         this.grupoServi.crear(grupo);
+        
+        if (this.grupoServi.grupoExiste(numeroGrupo)) {
+                throw new RuntimeException("Codigo Existe");
+            }            
+        else if (this.grupoServi.aulaExiste(aula)) {
+                throw new RuntimeException("Fecha existe");
+            } else {
+
+             this.profesorServi.crear(profesor);   
+            }
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException("Error al convetir el formato");
+        }
         
         
     }
