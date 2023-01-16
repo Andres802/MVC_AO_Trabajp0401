@@ -46,7 +46,15 @@ public class ProfesorControlador {
     }
     
     public List<Profesor>listar(){
-        return this.profesorServi.listar();
+        var retorno = profesorServi.listar();
+        
+        try{
+           this.profesorServi.listar();
+        }catch(Exception e){
+            throw new RuntimeException("No hay datos");
+        }
+        
+        return retorno;
     }
     public boolean codigoEliminar(int codigo) {
 

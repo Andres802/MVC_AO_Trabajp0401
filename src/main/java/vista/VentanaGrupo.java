@@ -201,7 +201,8 @@ public class VentanaGrupo extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
+       try{
+           
         if(JOptionPane.showConfirmDialog(this, "Quieres Guardar Los datos", "Selecione una opcion", JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE)==0){ 
         var data = new String[6];
         data[0] = this.jTextField1.getText();
@@ -215,6 +216,9 @@ public class VentanaGrupo extends javax.swing.JInternalFrame {
         this.limpiar();
      JOptionPane.showMessageDialog(this, "Los datos fueron guardados correctamente");
         }
+       }catch(Exception e){
+           JOptionPane.showMessageDialog(this, e.getMessage(),"Error ",JOptionPane.ERROR_MESSAGE);
+       }
     }//GEN-LAST:event_jButton1ActionPerformed
 
       
